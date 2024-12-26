@@ -8,20 +8,19 @@ const limitWords = (text, wordLimit) => {
   if (!text) return ""; // If text is undefined or null, return an empty string
 
   const words = text.split(" ");
-  if (words.length <= wordLimit) {
-    return text;
-  }
-  return words.slice(0, wordLimit).join(" ") + " ...";
+  return words.length <= wordLimit
+    ? text
+    : words.slice(0, wordLimit).join(" ") + " ...";
 };
 
 // Function to ensure rating is never less than 1
 const generateRating = (rate) => {
   const randomRating = rate || (Math.random() * 5).toFixed(1);
-  return parseFloat(randomRating) < 1 ? 1 : randomRating;
+  return Math.max(parseFloat(randomRating), 1); // Ensure rating is at least 1
 };
 
 const Product = () => {
-  const products = productsData?.products;
+  const products = productsData?.products || []; // Fallback to empty array if productsData is undefined
 
   // Pagination and Sort State
   const [currentPage, setCurrentPage] = useState(1);
@@ -53,17 +52,29 @@ const Product = () => {
   const currentProducts = sortedProducts.slice(indexOfFirstProduct, indexOfLastProduct);
 
   // Pagination
-  const totalPages = Math.ceil((products?.length || 0) / productsPerPage);
+  const totalPages = Math.ceil(products.length / productsPerPage);
+
+  // Handle page navigation
+  const handlePrevPage = () => {
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+  };
 
   return (
     <div className="p-9 mt-16">
       {/* Sort Options */}
       <div className="mb-4 flex justify-end items-center">
-        <div className="text-lg font-semibold text-gray-800">Sort by :</div>
+        <label htmlFor="sort" className="text-lg font-semibold text-gray-800">
+          Sort by:
+        </label>
         <select
+          id="sort"
           value={sortOption}
           onChange={(e) => setSortOption(e.target.value)}
-          className="px-2 w-20 py-1 ml-1 border rounded-md text-gray-700"
+          className="px-2 w-40 py-1 ml-2 border rounded-md text-gray-700"
         >
           <option value="none">None</option>
           <option value="price-low-high">Price: Low to High</option>
@@ -74,17 +85,17 @@ const Product = () => {
 
       {/* Product Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {currentProducts?.map((product) => (
+        {currentProducts.map((product) => (
           <div
             key={product.id}
-            className="bg-white border p-1 border-gray-300 rounded-lg shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] overflow-hidden flex flex-col"
+            className="bg-white border p-1 border-gray-300 rounded-lg shadow-md overflow-hidden flex flex-col"
           >
             {/* Link to Product Detail */}
             <Link to={`/product/${product.id}`}>
               {/* Image section */}
               <img
-                src={product?.image}
-                alt={product.title}
+                src={product.image}
+                alt={product.title || "Product image"}
                 className="w-full h-72 object-cover"
               />
               <div className="p-4 flex flex-col">
@@ -109,8 +120,9 @@ const Product = () => {
       {/* Pagination Controls */}
       <div className="mt-6 flex justify-between items-center">
         <button
-          onClick={() => setCurrentPage(currentPage - 1)}
+          onClick={handlePrevPage}
           disabled={currentPage === 1}
+          aria-label="Previous Page"
           className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg disabled:bg-gray-200"
         >
           Prev
@@ -119,8 +131,9 @@ const Product = () => {
           Page {currentPage} of {totalPages}
         </span>
         <button
-          onClick={() => setCurrentPage(currentPage + 1)}
+          onClick={handleNextPage}
           disabled={currentPage === totalPages}
+          aria-label="Next Page"
           className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg disabled:bg-gray-200"
         >
           Next
