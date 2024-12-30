@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
 import { BsCart3 } from "react-icons/bs";
-import { IoMdContact } from "react-icons/io";
-import { FaBars } from "react-icons/fa";
 import { CgSearch } from "react-icons/cg";
+import { FaBars } from "react-icons/fa";
+import { IoMdContact } from "react-icons/io";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,8 +28,8 @@ const Navbar = () => {
     const handleClickOutside = (event) => {
       if (
         modalRef.current &&
-        !modalRef.current.contains(event.target) &&
-        !buttonRef.current.contains(event.target)
+        modalRef.current.contains(event.target) &&
+        buttonRef.current.contains(event.target)
       ) {
         setIsModalOpen(false);
       }
@@ -182,6 +182,14 @@ const Navbar = () => {
                   Contact
                 </NavLink>
               </li>
+              <li>
+              <NavLink
+                className="text-lg font-semibold hover:text-indigo-600"
+                to="/recommendations"
+              >
+                Recommendation
+              </NavLink>
+            </li>
             </ul>
           </div>
         </div>

@@ -1,10 +1,11 @@
-// routes/recommendationRoutes.js
-const express = require('express');
+const express = require("express");
 const router = express.Router();
+const recommendationController = require("../controllers/recommendationsController");
 
-// Placeholder route for recommendations
-router.get('/', (req, res) => {
-  res.json({ message: 'Recommendation engine coming soon!' });
-});
+// Get
+router.get("/", recommendationController.getRecommendations);
+
+// post
+router.post("/", recommendationController.addRecommendation);
 
 module.exports = router;

@@ -22,7 +22,10 @@
                 1,
                 0
             ],
-            "isAccessory": false
+            "isAccessory": false,"rating": {
+                "rate": 4,
+                "count": 203
+            }
         },
         {
             "id": "product_2",
@@ -44,7 +47,10 @@
                 1,
                 0
             ],
-            "isAccessory": false
+            "isAccessory": false,"rating": {
+                "rate": 3,
+                "count": 203
+            }
         },
         {
             "id": "product_3",
@@ -69,7 +75,10 @@
                 1,
                 1
             ],
-            "isAccessory": false
+            "isAccessory": false,"rating": {
+                "rate": 4.5,
+                "count": 203
+            }
         },
         {
             "id": "product_4",
@@ -82,7 +91,10 @@
             "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve.",
             "brand": "Fjallraven",
             "price": 109.95,
-            "isAccessory": true
+            "isAccessory": true,"rating": {
+                "rate": 2,
+                "count": 203
+            }
         },
         {
             "id": "product_5",
@@ -95,7 +107,10 @@
             "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket. Great for casual fashion wear.",
             "brand": "Mens Casual",
             "price": 22.3,
-            "isAccessory": false
+            "isAccessory": false,"rating": {
+                "rate": 5,
+                "count": 203
+            }
         },
         {
             "id": "product_6",
@@ -108,7 +123,10 @@
             "description": "Great quality and lightweight. Perfect for casual wear and outdoor adventures.",
             "brand": "Mens Casual",
             "price": 55.99,
-            "isAccessory": false
+            "isAccessory": false,"rating": {
+                "rate": 3.9,
+                "count": 203
+            }
         },
         {
             "id": "product_7",
@@ -130,7 +148,10 @@
             ],
             "isAccessory": true,
             "brand": "Samsung",
-            "price": 9990
+            "price": 9990,"rating": {
+                "rate": 4.8,
+                "count": 203
+            }
         },
         {
             "id": "product_8",
@@ -152,7 +173,10 @@
             ],
             "isAccessory": true,
             "brand": "Samsung",
-            "price": 13990
+            "price": 13990,"rating": {
+                "rate": 5,
+                "count": 203
+            }
         },
         {
             "id": "product_9",
@@ -174,7 +198,10 @@
             ],
             "isAccessory": true,
             "brand": "Apple",
-            "price": 14999
+            "price": 14999,"rating": {
+                "rate": 3.7,
+                "count": 203
+            }
         },
         {
             "id": "product_10",
@@ -187,7 +214,10 @@
             "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
             "brand": "John Hardy",
             "price": 695,
-            "isAccessory": true
+            "isAccessory": true,"rating": {
+                "rate": 5,
+                "count": 203
+            }
         },
         {
             "id": "product_11",
@@ -200,7 +230,10 @@
             "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
             "brand": "Solid Gold",
             "price": 168,
-            "isAccessory": true
+            "isAccessory": true,"rating": {
+                "rate": 3.3,
+                "count": 203
+            }
         },
         {
             "id": "product_12",
@@ -213,7 +246,10 @@
             "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
             "brand": "White Gold",
             "price": 9.99,
-            "isAccessory": true
+            "isAccessory": true,"rating": {
+                "rate": 3.3,
+                "count": 203
+            }
         },
         {
             "id": "product_13",
@@ -226,7 +262,12 @@
             "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
             "brand": "Pierced Owl",
             "price": 10.99,
-            "isAccessory": true
+            "isAccessory": true,
+            "rating": {
+                "rate": 3.3,
+                "count": 203
+            }
+
         },
         {
             "id": "product_14",

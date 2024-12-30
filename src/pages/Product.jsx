@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import productsData from "../db.json"; // Import data directly
+import Recommendations from "./Recommendations";
 
 // Function to limit text to a specific number of words
 const limitWords = (text, wordLimit) => {
@@ -22,7 +23,7 @@ const generateRating = (rate) => {
 
 const Product = () => {
   const products = productsData?.products;
-
+  
   // Pagination and Sort State
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 8;
@@ -105,6 +106,10 @@ const Product = () => {
           </div>
         ))}
       </div>
+
+      {/* Recommendation box */}
+      
+        <Recommendations/>
 
       {/* Pagination Controls */}
       <div className="mt-6 flex justify-between items-center">
