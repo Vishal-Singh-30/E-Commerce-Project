@@ -1,19 +1,13 @@
-import React, { useState } from "react";
-import { Route, Routes, Link } from "react-router-dom";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import AboutUs from "../pages/About";
+import ContactUs from "../pages/Contact";
+import Home from "../pages/Home";
+import LoginPage from "../pages/LoginRegister";
 import Product from "../pages/Product";
 import ProductDetail from "../pages/ProductDetail";
-import LoginPage from "../pages/LoginRegister";
-import ContactUs from "../pages/Contact";
-import AboutUs from "../pages/About";
-import Home from "../pages/Home";
-// import Product from "./components/Product";
-// import ProductDetail from "./components/ProductDetail";
-// import Login from "./components/Login";
-// import ContactUs from "./components/ContactUs";
-// import About from "./components/About";
-// import Home from "./components/Home";
 
-function Routing() {
+const Routing = () => {
   return (
     <div>
       {/* Routes */}

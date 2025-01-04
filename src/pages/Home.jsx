@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import Carousel from "../components/Carousel";
+import Navbar from "../components/Navbar";
+import Recommendations from "./Recommendations";
 
 const Home = () => {
+    
   return (
     <div>
       <Navbar />
@@ -81,6 +82,11 @@ const Home = () => {
           </Link>
         </div>
       </div>
+
+      {/* Recommendation box */}
+
+      <Recommendations/>
+
     </div>
   );
 };
